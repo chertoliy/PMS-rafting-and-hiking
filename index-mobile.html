@@ -5,23 +5,20 @@
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Document</title>
+   <title>Позови меня с собой</title>
    <link rel="stylesheet" href="css/reset.min.css">
    <link rel="stylesheet" href="css/main-mobile.min.css">
-   <link rel="stylesheet" href="css/hiking-mobile.min.css">
    <meta name="theme-color" content="#F4F2E5">
    <meta name="apple-mobile-web-app-status-bar-style" content="#F4F2E5">
 </head>
 
-<body>
+<body class="body-no-scroll">
 
    <header class="header">
 
       <nav class="header__menu">
-         <nav class="header__menu">
-            <button class="header__menu-btn-open"></button>
-            <button class="header__menu-btn-close"></button>
-         </nav>
+         <button class="header__menu-btn-open"></button>
+         <button class="header__menu-btn-close"></button>
       </nav>
 
    </header>
@@ -93,13 +90,13 @@
             </div>
          </div>
       </section>
-      
+
       <section class="mobile-menu mobile-menu--closed">
          <div class="container">
             <div class="mobile-menu__header">
-               <button class="mobile-menu__header-btn">
-                  <img class="mobile-menu__header-img" src="images/mobile/close-menu-dark.svg" alt="Открыть Меню">
-               </button>
+               <!-- <button class="mobile-menu__header-btn">
+                  <img class="mobile-menu__header-img" src="images/mobile/close-menu-light.svg" alt="Открыть Меню">
+               </button> -->
             </div>
             <button class="mobile-menu__search-btn">Поиск по сайту</button>
             <div class="mobile-menu__sections">
@@ -123,7 +120,7 @@
                   </a>
                </div>
             </div>
-            <img class="mobile-menu__logo" src="images/mobile/mobile-logo-red.png" alt="ПМС">
+            <img class="mobile-menu__logo" src="images/mobile/mobile-logo-yellow.png" alt="ПМС">
          </div>
       </section>
 
@@ -137,9 +134,21 @@
                   <img class="mobile-search__header-img" src="images/mobile/mobile-home-icon.svg" alt="Главная">
                </a>
             </div>
-            <input class="mobile-search__input" type="text" placeholder="поиск по сайту">
+            <form class="mobile-search__form" action="">
+               <input class="mobile-search__input" type="search" placeholder="поиск по сайту" lang="ru">
+            </form>
             <div class="mobile-search__results">
-
+               <a class="mobile-search__item-link" href="#">
+                  <div class="mobile-search__item">
+                     <h4 class="mobile-search__item-region">Кавказ</h4>
+                     <p class="mobile-search__item-route">
+                        Кубань, Зеленчук, Белая, Мзымта
+                     </p>
+                     <p class="mobile-search__item-date">
+                        Июль-август 2016
+                     </p>
+                  </div>
+               </a>
             </div>
          </div>
       </section>
