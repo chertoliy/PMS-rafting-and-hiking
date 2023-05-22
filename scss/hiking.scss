@@ -1,0 +1,49 @@
+h3,
+h4 {
+   color: #262626;
+}
+
+.menu {
+   background: #FDC83C;
+
+   &__search-btn {
+      color: #262626;
+
+      &:hover {
+         color: #4A4A4A;
+      }
+
+      &::before {
+         content: url(../images/web/search-icon-dark.svg);
+         position: absolute;
+         top: 2px;
+         right: 0;
+      }
+
+      &:hover::before {
+         content: url(../images/web/search-icon-dark-hover.svg);
+      }
+
+      &::after {
+         background: #262626;
+      }
+
+      &:hover::after {
+         background: #4A4A4A;
+      }
+   }
+
+   &__header-link {
+
+      &:hover::after {
+         background: #4A4A4A;
+      }
+   }
+
+   &__header-heading,
+   &__footer-heading {
+      &:hover {
+         color: #4A4A4A;
+      }
+   }
+}

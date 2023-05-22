@@ -1,0 +1,18 @@
+.header {
+   
+   &__menu {
+      background: #66B6FF;
+   }
+
+   &__menu-btn-open {
+      background-image: url(../images/mobile/burger-icon-light.svg);
+   }
+
+   &__menu-btn-close {
+      background-image: url(../images/mobile/close-menu-light.svg);
+   }
+}
+
+.mobile-menu {
+   background: #66B6FF;
+}

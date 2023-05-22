@@ -1,0 +1,38 @@
+h3 {
+   color: #262626;
+}
+
+.header {
+
+   &__menu {
+      background: #FDC83C;
+   }
+
+   &__menu-btn-open {
+      background-image: url(../images/mobile/burger-icon-dark.svg);
+   }
+
+   &__menu-btn-close {
+      background-image: url(../images/mobile/close-menu-dark.svg);
+   }
+}
+
+.mobile-menu {
+   background: #FDC83C;
+
+   &__search-btn {
+      color: #262626;
+
+      &::before {
+         content: url(../images/mobile/mobile-search-icon-dark.svg);
+      }
+
+      &::after {
+         background: #262626;
+      }
+   }
+
+   &__footer-link {
+      color: #262626;
+   }
+}
