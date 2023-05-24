@@ -1,3 +1,17 @@
+// Desktop and mobile versions depending on screen width
+window.onload = () => {
+   if (window.innerWidth >= 416) {
+      window.location = "index.html";
+   }
+}
+
+window.onload = () => {
+   if (window.innerWidth < 416) {
+      window.location = "index-mobile.html";
+   }
+}
+
+// Popup search menu for desktop version
 const searchMenu = document.querySelector('.popup-search');
 const openSearchMenuBtn = document.querySelector('.menu__search-btn');
 const closeSearchMenuBtn = document.querySelector('.popup-search__menu-btn');
