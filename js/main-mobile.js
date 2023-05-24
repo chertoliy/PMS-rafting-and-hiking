@@ -1,3 +1,4 @@
+// Mobile burger menu
 const navMenu = document.querySelector('.mobile-menu');
 // const openNavMenuBtn = document.querySelector('.header__menu-btn');
 const openNavMenuBtn = document.querySelector('.header__menu-btn-open');
@@ -24,6 +25,7 @@ closeNavMenuBtn.onclick = () => {
    body.classList.remove('body-no-scroll');
 };
 
+// Mobile search menu
 const searchMenu = document.querySelector('.mobile-search');
 const openSearchMenuBtn = document.querySelector('.mobile-menu__search-btn');
 const closeSearchMenuBtn = document.querySelector('.mobile-search__header-btn-back');

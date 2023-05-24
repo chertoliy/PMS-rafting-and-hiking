@@ -1,12 +1,12 @@
 // Desktop and mobile versions depending on screen width
 window.onload = () => {
-   if (window.innerWidth >= 416) {
+   if (window.innerWidth >= 420) {
       window.location = "index.html";
    }
 }
 
 window.onload = () => {
-   if (window.innerWidth < 416) {
+   if (window.innerWidth < 420) {
       window.location = "index-mobile.html";
    }
 }
