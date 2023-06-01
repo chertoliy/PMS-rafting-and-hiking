@@ -5,8 +5,8 @@ const closeNavMenuBtn = document.querySelector('.header__menu-btn-close');
 const body = document.querySelector('body');
 
 window.onload = () => {
-   if (window.innerWidth >= 421) {
-      window.location = "index.html"; 
+   if (window.innerWidth >= 501) {
+      window.location = "index.html";
    };
    body.classList.remove('body-no-scroll');
    closeNavMenuBtn.classList.remove('header__menu-btn-close');
