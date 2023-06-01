@@ -1,6 +1,6 @@
 // Desktop version screen width check
 window.onload = () => {
-   if (window.innerWidth < 501) {
+   if (window.outerWidth < 421) {
       window.location = "index-mobile.html";
    };
 };

@@ -248,13 +248,6 @@ a {}
    }
 }
 
-// Mobile menu variants
-
-// .mobile-menu--closed {
-//    top: 100vh;
-//    transition: all cubic-bezier(0.5, 0.5, 0.05, 1) 1.5s;
-// }
-
 .mobile-menu--closed {
    top: -100vh;
    transition: all cubic-bezier(0.5, 0.5, 0.05, 1) 1.5s;
