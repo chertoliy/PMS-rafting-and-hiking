@@ -51,7 +51,7 @@ body {
 h1 {
    font-family: 'Soyuz Grotesk';
    font-size: 40px;
-   line-height: 36px;
+   line-height: 32px;
 }
 
 h2 {
@@ -113,8 +113,6 @@ a {}
       height: 24px;
       background-image: url(../images/mobile/close-menu-light.svg);
    }
-
-   // &__menu-btn-img {}
 }
 
 .main {}
@@ -128,7 +126,7 @@ a {}
    background: #F4F2E5;
 
    &__heading {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
    }
 
    &__subheading {
@@ -193,6 +191,7 @@ a {}
       position: relative;
       text-align: left;
       width: 100%;
+      margin-top: 52px;
       margin-bottom: 31px;
       font-family: 'Greycliff CF Bold';
       font-size: 20px;

@@ -1,16 +1,18 @@
-// Mobile burger menu
+// Mobile version onload presets
 const navMenu = document.querySelector('.mobile-menu');
-// const openNavMenuBtn = document.querySelector('.header__menu-btn');
 const openNavMenuBtn = document.querySelector('.header__menu-btn-open');
 const closeNavMenuBtn = document.querySelector('.header__menu-btn-close');
-// const closeNavMenuBtn = document.querySelector('.mobile-menu__header-btn');
 const body = document.querySelector('body');
 
 window.onload = () => {
+   if (window.innerWidth >= 421) {
+      window.location = "index.html"; 
+   };
    body.classList.remove('body-no-scroll');
    closeNavMenuBtn.classList.remove('header__menu-btn-close');
 };
 
+// Mobile burger menu
 openNavMenuBtn.onclick = () => {
    navMenu.classList.remove('mobile-menu--closed');
    openNavMenuBtn.classList.remove('header__menu-btn-open');
