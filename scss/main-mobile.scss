@@ -217,7 +217,7 @@ a {}
    }
 
    &__sections {
-      height: 75vh;
+      height: 70vh;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
@@ -244,7 +244,8 @@ a {}
    &__logo {
       position: absolute;
       right: 0;
-      bottom: 0;
+      bottom: 50px;
+      width: 200px;
    }
 }
 
