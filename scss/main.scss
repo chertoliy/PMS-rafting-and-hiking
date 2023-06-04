@@ -512,6 +512,10 @@ main {
 .popup-contacts {
    @include popup;
 
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
    &__menu {
       @include popup__menu
    }
