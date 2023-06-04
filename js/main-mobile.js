@@ -1,4 +1,4 @@
-// ⁡⁢⁣⁣​‌‍‌​‌‍‌M͟o͟b͟i͟l͟e v͟e͟r͟s͟i͟o͟n o͟n͟l͟o͟a͟d a͟n͟d r͟e͟s͟i͟z͟e c͟h͟e͟c͟k͟i͟n͟g a͟n͟d p͟r͟e͟s͟e͟t͟s⁡​⁡⁡⁡
+// ⁡⁢⁣⁣​‌‍‌​‌‍‌M͟o͟b͟i͟l͟e v͟e͟r͟s͟i͟o͟n w͟i͟d͟t͟h c͟h͟e͟c͟k a͟n͟d p͟r͟e͟s͟e͟t͟s⁡​⁡⁡⁡
 
 const body = document.querySelector('body');
 const navMenu = document.querySelector('.mobile-menu');
@@ -9,16 +9,16 @@ window.onload = checkScreenWidth && menuToggle;
 window.onresize = checkScreenWidth;
 
 function checkScreenWidth() {
-   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/index-mobile.html") {
+   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/index-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/index-mobile.html") {
       window.location = "index.html";
    };
-   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/rafting-mobile.html") {
+   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/rafting-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/rafting-mobile.html") {
       window.location = "rafting.html";
    };
-   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/hiking-mobile.html") {
+   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/hiking-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/hiking-mobile.html") {
       window.location = "hiking.html";
    };
-   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/news-mobile.html") {
+   if (window.innerWidth >= 1025 && window.location == window.location.origin + "/news-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/news-mobile.html") {
       window.location = "news.html";
    };
 };
