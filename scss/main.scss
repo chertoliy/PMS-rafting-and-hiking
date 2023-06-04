@@ -34,6 +34,14 @@
    font-display: swap;
 }
 
+
+$backgroundRed: #EE4816;
+$backgroundBlue: #66B6FF;
+$backgroundYellow: #FDC83C;
+$colorLight: #F4F2E5;
+$colorLightHover: #FFF;
+$colorDark: #262626;
+
 body {
    display: flex;
    justify-content: center;
@@ -46,6 +54,7 @@ h1 {
    font-family: 'Soyuz Grotesk';
    font-size: 100px;
    line-height: 80px;
+   margin-bottom: 15px;
 }
 
 h2 {
@@ -58,7 +67,7 @@ h3 {
    font-family: 'Soyuz Grotesk';
    font-size: 48px;
    line-height: 45px;
-   color: #F4F2E5;
+   color: $colorLight;
 }
 
 h4 {
@@ -104,14 +113,14 @@ main {
       margin: 75px 50px;
    }
 
-   &__popup-search {
+   &__popup {
       margin: 40px 57px 40px 45px;
    }
 }
 
 .menu {
    width: 420px;
-   background: #EE4816;
+   background: $backgroundRed;
    border-radius: 80px 0 0 80px;
 
    &__header {}
@@ -125,10 +134,10 @@ main {
       font-family: 'Greycliff CF Bold';
       font-size: 24px;
       line-height: 30px;
-      color: #F4F2E5;
+      color: $colorLight;
 
       &:hover {
-         color: #FFF;
+         color: $colorLightHover;
       }
 
       &::before {
@@ -147,13 +156,13 @@ main {
          position: absolute;
          width: 320px;
          height: 5px;
-         background: #F4F2E5;
+         background: $colorLight;
          top: 35px;
          left: 0;
       }
 
       &:hover::after {
-         background: #FFF;
+         background: $colorLightHover;
       }
    }
 
@@ -170,7 +179,7 @@ main {
          width: 17px;
          height: 17px;
          top: 14px;
-         background: #FFF;
+         background: $colorLightHover;
          border-radius: 50%;
       }
 
@@ -189,7 +198,7 @@ main {
 
    &__header-heading {
       &:hover {
-         color: #FFF;
+         color: $colorLightHover;
       }
    }
 
@@ -200,22 +209,24 @@ main {
 
    &__footer-links {}
 
-   &__footer-link {
+   &__footer-btn {
       display: block;
       margin-bottom: 5px;
       font-family: 'Greycliff CF Bold';
       font-size: 24px;
       line-height: 30px;
-      color: #F4F2E5;
+      color: $colorLight;
 
       &:nth-of-type(2) {
          margin-bottom: 0;
       }
 
       &:hover {
-         color: #FFF;
+         color: $colorLightHover;
       }
    }
+
+   &__footer-heading {}
 }
 
 .logo__link {
@@ -227,9 +238,9 @@ main {
 
 .posts {
    width: 948px;
-   background: #F4F2E5;
+   background: $colorLight;
    overflow: scroll;
-   color: #262626;
+   color: $colorDark;
    border-radius: 0 80px 80px 0;
 
    &::-webkit-scrollbar {
@@ -241,9 +252,7 @@ main {
       justify-content: space-between;
    }
 
-   &__heading {
-      margin-bottom: 15px;
-   }
+   &__heading {}
 
    &__home-link {
       display: block;
@@ -260,7 +269,6 @@ main {
    &__box {
       display: grid;
       grid-template-columns: auto auto auto;
-      // grid-template-columns: 1fr 1fr 1fr;
       grid-template-rows: auto auto;
       grid-gap: 20px;
       padding-bottom: 50px;
@@ -305,7 +313,7 @@ main {
    }
 
    &__item-link {
-      color: #262626;
+      color: $colorDark;
    }
 
    &__item-img {
@@ -357,27 +365,40 @@ main {
    &__item-date {}
 }
 
-.popup-search {
+@mixin popup {
    position: absolute;
    z-index: 1;
    top: -1px;
    left: -1px;
    width: 1370px;
-   height: 100vh;
-   background: #F4F2E5;
+   height: 120vh;
+   background: $colorLight;
    overflow: scroll;
    border-radius: 80px 80px 0 0;
    transition: all cubic-bezier(0.05, 0.7, 0.3, 1) 1.5s;
+}
+
+@mixin popup--closed {
+   top: 150vh;
+   transition: all cubic-bezier(0.5, 0.5, 0.05, 1) 1.5s;
+}
+
+@mixin popup__menu {
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   margin-bottom: 86px;
+}
+
+.popup-search {
+   @include popup;
 
    &::-webkit-scrollbar {
       display: none;
    }
 
    &__menu {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 86px;
+      @include popup__menu;
    }
 
    &__menu-btn {}
@@ -394,15 +415,16 @@ main {
       line-height: 80px;
       background: transparent;
       border: none;
-      border-bottom: 5px solid #262626;
+      border-bottom: 5px solid $colorDark;
 
       &::placeholder {
-         color: #262626;
+         color: $colorDark;
       }
 
       &::-webkit-search-cancel-button {
          appearance: unset;
          content: url(../images/web/clear-search-icon.svg);
+         cursor: pointer;
       }
    }
 
@@ -419,7 +441,7 @@ main {
       transition: all .5s;
 
       &:hover {
-         background: #66B6FF;
+         background: $backgroundBlue;
       }
 
       &::before {
@@ -458,8 +480,53 @@ main {
 }
 
 .popup-search--closed {
-   top: 120vh;
-   transition: all cubic-bezier(0.5, 0.5, 0.05, 1) 1.5s;
+   @include popup--closed;
+}
+
+.popup-about {
+   @include popup;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
+
+   &__menu {
+      @include popup__menu;
+   }
+
+   &__menu-btn {}
+
+   &__menu-img {}
+
+   &__menu-link {}
+
+   &__heading {}
+
+   &__subheading {}
+}
+
+.popup-about--closed {
+   @include popup--closed;
+}
+
+.popup-contacts {
+   @include popup;
+
+   &__menu {
+      @include popup__menu
+   }
+
+   &__menu-btn {}
+
+   &__menu-img {}
+
+   &__menu-link {}
+
+   &__heading {}
+}
+
+.popup-contacts--closed {
+   @include popup--closed;
 }
 
 @media (max-width: 1400px) {
@@ -483,35 +550,5 @@ main {
 @media (max-width: 1100px) {
    body {
       scale: 70%;
-   }
-}
-
-@media (max-width: 1000px) {
-   body {
-      scale: 65%;
-   }
-}
-
-@media (max-width: 900px) {
-   body {
-      scale: 55%;
-   }
-}
-
-@media (max-width: 800px) {
-   body {
-      scale: 50%;
-   }
-}
-
-@media (max-width: 700px) {
-   body {
-      scale: 40%;
-   }
-}
-
-@media (max-width: 600px) {
-   body {
-      scale: 30%;
    }
 }

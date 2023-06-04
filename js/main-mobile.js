@@ -1,20 +1,26 @@
-// Mobile version onload presets
+// ⁡⁢⁣⁣​‌‍‌​‌‍‌M͟o͟b͟i͟l͟e v͟e͟r͟s͟i͟o͟n o͟n͟l͟o͟a͟d a͟n͟d r͟e͟s͟i͟z͟e p͟r͟e͟s͟e͟t͟s⁡​⁡⁡⁡
+
+const body = document.querySelector('body');
 const navMenu = document.querySelector('.mobile-menu');
 const openNavMenuBtn = document.querySelector('.header__menu-btn-open');
 const closeNavMenuBtn = document.querySelector('.header__menu-btn-close');
-const body = document.querySelector('body');
 
-window.onload = () => {
-   console.log(window.outerWidth);
-   console.log(window.innerWidth);
-   if (window.innerWidth >= 421) {
+window.onload = checkScreenWidth && menuToggle;
+window.onresize = checkScreenWidth;
+
+function checkScreenWidth() {
+   if (window.innerWidth >= 1025) {
       window.location = "index.html";
    };
+};
+
+function menuToggle() {
    body.classList.remove('body-no-scroll');
    closeNavMenuBtn.classList.remove('header__menu-btn-close');
 };
 
-// Mobile burger menu
+// ⁡⁢⁣⁢​‌‍‌⁡⁢⁣⁣⁡⁢⁣⁣M͟o͟b͟i͟l͟e b͟u͟r͟g͟e͟r m͟e͟n͟u⁡⁡​⁡
+
 openNavMenuBtn.onclick = () => {
    navMenu.classList.remove('mobile-menu--closed');
    openNavMenuBtn.classList.remove('header__menu-btn-open');
@@ -29,7 +35,8 @@ closeNavMenuBtn.onclick = () => {
    body.classList.remove('body-no-scroll');
 };
 
-// Mobile search menu
+// ​‌‍‌⁡⁢⁣⁣M͟o͟b͟i͟l͟e s͟e͟a͟r͟c͟h m͟e͟n͟u⁡​
+
 const searchMenu = document.querySelector('.mobile-search');
 const openSearchMenuBtn = document.querySelector('.mobile-menu__search-btn');
 const closeSearchMenuBtn = document.querySelector('.mobile-search__header-btn-back');
