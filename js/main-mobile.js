@@ -5,20 +5,28 @@ const navMenu = document.querySelector('.mobile-menu');
 const openNavMenuBtn = document.querySelector('.header__menu-btn-open');
 const closeNavMenuBtn = document.querySelector('.header__menu-btn-close');
 
-window.onload = checkScreenWidth && menuToggle;
+window.onload = (checkScreenWidth, menuToggle);
 window.onresize = checkScreenWidth;
 
 function checkScreenWidth() {
-   if (window.innerWidth >= 1025 && (window.location == window.location.origin + "/index-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/index-mobile.html")) {
+   if (window.innerWidth >= 1025 &&
+      (window.location == window.location.origin + "/index-mobile.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/index-mobile.html")) {
       window.location = "index.html";
    };
-   if (window.innerWidth >= 1025 && (window.location == window.location.origin + "/rafting-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/rafting-mobile.html")) {
+   if (window.innerWidth >= 1025 &&
+      (window.location == window.location.origin + "/rafting-mobile.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/rafting-mobile.html")) {
       window.location = "rafting.html";
    };
-   if (window.innerWidth >= 1025 && (window.location == window.location.origin + "/hiking-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/hiking-mobile.html")) {
+   if (window.innerWidth >= 1025 &&
+      (window.location == window.location.origin + "/hiking-mobile.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/hiking-mobile.html")) {
       window.location = "hiking.html";
    };
-   if (window.innerWidth >= 1025 && (window.location == window.location.origin + "/news-mobile.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/news-mobile.html")) {
+   if (window.innerWidth >= 1025 &&
+      (window.location == window.location.origin + "/news-mobile.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/news-mobile.html")) {
       window.location = "news.html";
    };
 };

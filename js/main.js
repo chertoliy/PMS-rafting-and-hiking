@@ -4,19 +4,29 @@ window.onload = checkScreenWidth;
 window.onresize = checkScreenWidth;
 
 function checkScreenWidth() {
-   if (window.innerWidth < 1025 && (window.location == window.location.href || window.location == window.location.origin + "/index.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/" || window.location == window.location.origin + "/PMS-rafting-and-hiking/index.html")) {
+   if (window.innerWidth < 1025 &&
+      (window.location == window.location.href ||
+         window.location == window.location.origin + "/index.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/index.html")) {
       window.location = "index-mobile.html";
    };
-   if (window.innerWidth < 1025 && (window.location == window.location.origin + "/rafting.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/rafting.html")) {
+   if (window.innerWidth < 1025 &&
+      (window.location == window.location.origin + "/rafting.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/rafting.html")) {
       window.location = "rafting-mobile.html";
    };
-   if (window.innerWidth < 1025 && (window.location == window.location.origin + "/hiking.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/hiking.html")) {
+   if (window.innerWidth < 1025 &&
+      (window.location == window.location.origin + "/hiking.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/hiking.html")) {
       window.location = "hiking-mobile.html";
    };
-   if (window.innerWidth < 1025 && (window.location == window.location.origin + "/news.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/news.html")) {
+   if (window.innerWidth < 1025 &&
+      (window.location == window.location.origin + "/news.html" ||
+         window.location == window.location.origin + "/PMS-rafting-and-hiking/news.html")) {
       window.location = "news-mobile.html";
    };
-}
+};
 
 // ⁡⁢⁣⁣​‌‍‌P͟o͟p͟u͟p s͟e͟a͟r͟c͟h m͟e͟n͟u f͟o͟r d͟e͟s͟k͟t͟o͟p v͟e͟r͟s͟i͟o͟n​⁡
 
