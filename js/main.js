@@ -4,7 +4,7 @@ window.onload = checkScreenWidth;
 window.onresize = checkScreenWidth;
 
 function checkScreenWidth() {
-   if (window.innerWidth < 1025 && (window.location == window.location.origin || window.location == window.location.href || window.location == window.location.origin + "/index.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/index.html")) {
+   if (window.innerWidth < 1025 && (window.location == window.location.href || window.location == window.location.origin + "/index.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/" || window.location == window.location.origin + "/PMS-rafting-and-hiking/index.html")) {
       window.location = "index-mobile.html";
    };
    if (window.innerWidth < 1025 && (window.location == window.location.origin + "/rafting.html" || window.location == window.location.origin + "/PMS-rafting-and-hiking/rafting.html")) {
