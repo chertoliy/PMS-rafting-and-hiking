@@ -114,7 +114,13 @@ main {
    }
 
    &__popup {
+      height: auto;
       margin: 40px 57px 40px 45px;
+   }
+
+   &__popup-about {
+      height: auto;
+      margin: 40px 149px 0 149px;
    }
 }
 
@@ -314,6 +320,17 @@ main {
 
    &__item-link {
       color: $colorDark;
+
+      &:hover>.posts__item-img {
+         box-shadow: 0 0 20px 10px #F4F2E5 inset;
+         scale: 99%;
+
+         // --radius: 10px;  --inset: 20px;  --transition-length: 20px;  --blur: 20px;
+         // inset: 0;  border-radius: var(--radius);  
+         // -webkit-backdrop-filter: blur(var(--blur));  backdrop-filter: blur(var(--blur));  --r: max(var(--transition-length), calc(var(--radius) - var(--inset)));  --corner-size: calc(var(--r) + var(--inset)) calc(var(--r) + var(--inset));  --corner-gradient: transparent 0px,    transparent calc(var(--r) - var(--transition-length)), black var(--r);  --fill-gradient: black, black var(--inset),    transparent calc(var(--inset) + var(--transition-length)),    transparent calc(100% - var(--transition-length) - var(--inset)),    black calc(100% - var(--inset));  --fill-narrow-size: calc(100% - (var(--inset) + var(--r)) * 2);  --fill-farther-position: calc(var(--inset) + var(--r));  
+         // -webkit-mask-image: linear-gradient(to right, var(--fill-gradient)),    linear-gradient(to bottom, var(--fill-gradient)),    radial-gradient(at bottom right, var(--corner-gradient)),    radial-gradient(at bottom left, var(--corner-gradient)),    radial-gradient(at top left, var(--corner-gradient)),    radial-gradient(at top right, var(--corner-gradient));  -webkit-mask-size: 100% var(--fill-narrow-size), var(--fill-narrow-size) 100%,    var(--corner-size), var(--corner-size), var(--corner-size),    var(--corner-size);  -webkit-mask-position: 0 var(--fill-farther-position), var(--fill-farther-position) 0,    0 0, 100% 0, 100% 100%, 0 100%;  
+         // -webkit-mask-repeat: no-repeat;
+      }
    }
 
    &__item-img {
@@ -322,36 +339,47 @@ main {
       min-height: 150px;
       max-height: 415px;
       margin-bottom: 10px;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      transition: all .5s;
    }
 
    &__item-img-smallest {
       width: 269px;
       height: 150px;
+      background-image: url(../images/test-img.jpg);
    }
 
    &__item-img-small {
       width: 269px;
       height: 300px;
+      background-image: url(../images/test-img2.jpg);
    }
 
    &__item-img-standard {
       width: 414px;
       height: 300px;
+      background-image: url(../images/test-img.jpg);
    }
 
    &__item-img-high {
       width: 269px;
       height: 414px;
+      background-image: url(../images/test-img2.jpg);
    }
 
    &__item-img-wide {
       width: 559px;
       height: 300px;
+      background-image: url(../images/test-img.jpg);
    }
 
    &__item-img-widest {
       width: 848px;
       height: 300px;
+      background-image: url(../images/test-img.jpg);
    }
 
    &__item-heading {
@@ -369,13 +397,18 @@ main {
    position: absolute;
    z-index: 1;
    top: -1px;
+   bottom: 0;
    left: -1px;
    width: 1370px;
-   height: 120vh;
+   height: 110vh;
    background: $colorLight;
    overflow: scroll;
    border-radius: 80px 80px 0 0;
    transition: all cubic-bezier(0.05, 0.7, 0.3, 1) 1.5s;
+
+   &::-webkit-scrollbar {
+      display: none;
+   }
 }
 
 @mixin popup--closed {
@@ -387,15 +420,11 @@ main {
    display: flex;
    justify-content: space-between;
    align-items: center;
-   margin-bottom: 86px;
+   margin-bottom: 125px;
 }
 
 .popup-search {
    @include popup;
-
-   &::-webkit-scrollbar {
-      display: none;
-   }
 
    &__menu {
       @include popup__menu;
@@ -428,7 +457,9 @@ main {
       }
    }
 
-   &__results {}
+   &__results {
+      padding-bottom: 250px;
+   }
 
    &__item-link {}
 
@@ -483,15 +514,23 @@ main {
    @include popup--closed;
 }
 
+@mixin popup-about__text {
+   font-family: 'Greycliff CF Regular';
+   font-size: 24px;
+   line-height: 30px;
+}
+
 .popup-about {
    @include popup;
 
-   &::-webkit-scrollbar {
-      display: none;
+   &__background {
+      position: absolute;
+      z-index: -1;
    }
 
    &__menu {
       @include popup__menu;
+      margin-bottom: 58px;
    }
 
    &__menu-btn {}
@@ -500,9 +539,72 @@ main {
 
    &__menu-link {}
 
-   &__heading {}
+   &__header {
+      height: 724px;
+      margin-bottom: 90px;
+   }
 
-   &__subheading {}
+   &__heading {
+      color: $colorLight;
+      margin-bottom: 370px;
+      font-size: 104px;
+      line-height: 92px;
+   }
+
+   &__subheading {
+      color: $colorLight;
+   }
+
+   &__history {
+      display: flex;
+      flex-wrap: wrap;
+      padding-bottom: 195px;
+   }
+
+   &__history-box {
+      width: 415px;
+      height: 184px;
+
+      &:nth-of-type(odd) {
+         margin-right: 238px;
+      }
+
+      &:nth-of-type(1) {
+         margin-bottom: 126px;
+      }
+
+      &:nth-of-type(2) {
+         margin-bottom: 126px;
+      }
+   }
+
+   &__history-heading {
+      margin-bottom: 10px;
+   }
+
+   &__history-text {
+      @include popup-about__text
+   }
+
+   &__rafts {
+      height: 903px;
+   }
+
+   &__rafts-heading {
+      margin-top: 102px;
+      margin-bottom: 10px;
+   }
+
+   &__rafts-text {
+      @include popup-about__text
+   }
+
+   &__contacts {
+      padding-top: 104px;
+      padding-bottom: 500px;
+   }
+
+   &__contacts-heading {}
 }
 
 .popup-about--closed {
@@ -511,10 +613,6 @@ main {
 
 .popup-contacts {
    @include popup;
-
-   &::-webkit-scrollbar {
-      display: none;
-   }
 
    &__menu {
       @include popup__menu
@@ -527,11 +625,116 @@ main {
    &__menu-link {}
 
    &__heading {}
+
+   &__links {
+      margin: 0 195px;
+   }
+
+   &__links-top {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 125px;
+   }
+
+   &__links-bottom {
+      display: flex;
+      justify-content: space-evenly;
+   }
+
+   &__links-top-link {
+      display: block;
+      width: 220px;
+      height: 220px;
+      transition: all 0.5s;
+
+      &:nth-of-type(1) {
+         background: url(../images/web/telegram-icon.svg);
+      }
+
+      &:nth-of-type(1):hover {
+         background: url(../images/web/telegram-icon-hover.svg);
+      }
+
+      &:nth-of-type(2) {
+         background: url(../images/web/instagram-icon.svg);
+      }
+
+      &:nth-of-type(2):hover {
+         background: url(../images/web/instagram-icon-hover.svg);
+      }
+
+      &:nth-of-type(3) {
+         background: url(../images/web/vk-icon.svg);
+      }
+
+      &:nth-of-type(3):hover {
+         background: url(../images/web/vk-icon-hover.svg);
+      }
+   }
+
+   &__links-bottom-link {
+      display: block;
+      width: 220px;
+      height: 220px;
+      transition: all 0.5s;
+
+      &:nth-of-type(1) {
+         background: url(../images/web/fb-icon.svg);
+      }
+
+      &:nth-of-type(1):hover {
+         background: url(../images/web/fb-icon-hover.svg);
+      }
+
+      &:nth-of-type(2) {
+         background: url(../images/web/youtube-icon.svg);
+      }
+
+      &:nth-of-type(2):hover {
+         background: url(../images/web/youtube-icon-hover.svg);
+      }
+   }
+
+   &__links-img {
+      display: block;
+      width: 100%;
+      height: 100%;
+
+   }
 }
 
 .popup-contacts--closed {
    @include popup--closed;
 }
+
+.menu-404 {
+   position: relative;
+   width: 1368px;
+   height: 892px;
+   padding: 160px 190px;
+   background: #F4F2E5;
+   border-radius: 80px;
+
+   &__img {}
+
+   &__link {}
+   
+   &__logo {
+      position: absolute;
+      width: 340px;
+      height: 340px;
+      top: 160px;
+      left: 515px;
+      background-image: url(../images/web/404-pms-logo.svg);
+      border-radius: 340px;
+      transition: all .5s;
+
+      &:hover {
+         background-image: url(../images/web/404-pms-logo-hover.svg);
+      }
+   }
+}
+
 
 @media (max-width: 1400px) {
    body {
